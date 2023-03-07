@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/home
     username: postgres
-    password: 123456
+    password: root
     driver-class-name: org.postgresql.Driver
   jackson:
     time-zone: GMT+8
@@ -15,7 +15,9 @@ spring:
         format_sql: true
         hbm2ddl:
           auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
+
 
 server:
   port: 9090

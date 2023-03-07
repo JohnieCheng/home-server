@@ -1,12 +1,10 @@
 package com.johnie.homeserver.entity;
 
+import com.johnie.homeserver.pojo.dto.UserDTO;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.Version;
@@ -20,7 +18,9 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class SysUser implements Serializable {
@@ -57,7 +57,7 @@ public class SysUser implements Serializable {
      * 邮箱
      */
     @Email
-    private Integer email;
+    private String email;
     /**
      * 生日
      */
@@ -66,12 +66,12 @@ public class SysUser implements Serializable {
     /**
      * 上次登录时间
      */
-    @Column(nullable = false, columnDefinition = "datetime")
+    @Column(nullable = false)
     private Date lastLoginTime;
     /**
      * 创建日期
      */
-    @Column(nullable = false, columnDefinition = "datetime", updatable = false)
+    @Column(nullable = false, updatable = false)
     @CreatedDate
     private Date createDate;
     /**
@@ -79,7 +79,7 @@ public class SysUser implements Serializable {
      */
     @Column(nullable = false, updatable = false)
     @CreatedBy
-    private Date createBy;
+    private String createBy;
     /**
      * 上次更新人
      */
@@ -88,7 +88,6 @@ public class SysUser implements Serializable {
     /**
      * 上次更新日期
      */
-    @Column(columnDefinition = "datetime")
     @LastModifiedDate
     private Date lastUpdateDate;
     /**
@@ -96,6 +95,11 @@ public class SysUser implements Serializable {
      */
     @Version
     private long objectVersion;
+
+
+    public SysUser(UserDTO dto) {
+        builder().account(dto.getEmail()).userName(dto.getEmail()).email(dto.getEmail()).password(dto.getPassword()).createDate(new Date()).createBy("johnie").objectVersion(1).build();
+    }
 
     @Override
     public boolean equals(Object o) {
