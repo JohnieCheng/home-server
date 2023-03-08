@@ -1,9 +1,9 @@
 package com.johnie.homeserver.service;
 
-import com.johnie.homeserver.common.enums.JsonResult;
-import com.johnie.homeserver.entity.SysUser;
+import com.johnie.homeserver.framwork.enums.Result;
 import com.johnie.homeserver.pojo.dto.UserDTO;
+import com.johnie.homeserver.pojo.vo.AddUserResponseVo;
 
 public interface LoginService {
-    JsonResult<SysUser> add(UserDTO userDTO);
+    Result<AddUserResponseVo> add(UserDTO userDTO);
 }

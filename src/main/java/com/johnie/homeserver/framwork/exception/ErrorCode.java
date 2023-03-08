@@ -1,4 +1,6 @@
-package com.johnie.homeserver.common.enums;
+package com.johnie.homeserver.framwork.exception;
+
+import lombok.Getter;
 
 /**
  * * 规定:
@@ -7,17 +9,20 @@ package com.johnie.homeserver.common.enums;
  * * #2001～2999 区间表示用户错误
  * * #3001～3999 区间表示接口异常
  */
+@Getter
 public enum ErrorCode {
     /**
      * 成功
      */
     SUCCESS(200, "成功"),
 
+    UNAUTHORIZED(401, "还未授权，不能访问"),
+
     /* 默认失败 */
     /**
      * 失败
      */
-    FAIL(999, "失败"),
+    INTERNAL_SERVER_ERROR(500, "服务器异常，请稍后再试"),
 
     /* 参数错误：1000～1999 */
 
@@ -83,8 +88,8 @@ public enum ErrorCode {
      * 没有权限
      */
     NO_PERMISSION(3001, "没有权限");
-    private Integer code;
-    private String message;
+    private final Integer code;
+    private final String message;
 
     ErrorCode(Integer code, String message) {
         this.code = code;
@@ -104,21 +109,5 @@ public enum ErrorCode {
             }
         }
         return null;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }
