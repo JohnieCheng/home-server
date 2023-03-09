@@ -1,6 +1,6 @@
 package com.johnie.homeframework.entity;
 
-import com.johnie.homeserver.pojo.dto.UserDTO;
+import com.johnie.homeframework.pojo.dto.UserDTO;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

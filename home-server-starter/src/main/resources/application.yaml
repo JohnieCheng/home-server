@@ -1,0 +1,26 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 1000
+      min-spare: 30
+  port: 9090
+  servlet:
+    context-path: /
+    session:
+      cookie:
+        http-only: true
+
+spring:
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+  application:
+    name: home-server
+  jackson:
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB

@@ -1,11 +1,12 @@
 package com.johnie.homeframework.controller;
 
-import com.johnie.homeserver.framwork.Mappers.SysUserMapper;
-import com.johnie.homeserver.framwork.enums.Result;
-import com.johnie.homeserver.pojo.dto.UserDTO;
-import com.johnie.homeserver.pojo.vo.AddUserResponseVo;
-import com.johnie.homeserver.pojo.vo.AddUserVo;
-import com.johnie.homeserver.service.LoginService;
+
+import com.johnie.homeframework.framwork.Mappers.SysUserMapper;
+import com.johnie.homeframework.framwork.enums.Result;
+import com.johnie.homeframework.pojo.dto.UserDTO;
+import com.johnie.homeframework.pojo.vo.AddUserResponseVo;
+import com.johnie.homeframework.pojo.vo.AddUserVo;
+import com.johnie.homeframework.service.LoginService;
 import lombok.NonNull;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class LoginController {
     final LoginService loginService;
-
 
     public LoginController(LoginService loginService) {
         this.loginService = loginService;
