@@ -1,8 +1,8 @@
 package com.johnie.homeframework.pojo.vo;
 
 
+import jakarta.validation.constraints.Email;
 import lombok.Data;
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 @Data
