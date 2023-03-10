@@ -4,8 +4,7 @@
     <parent>
         <groupId>com.johnie</groupId>
         <artifactId>home-server</artifactId>
-        <version>3.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>home-server-starter</artifactId>

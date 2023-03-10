@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.johnie</groupId>
         <artifactId>home-server</artifactId>
-        <version>3.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>home-system</artifactId>

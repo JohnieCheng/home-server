@@ -17,3 +17,9 @@ spring:
           auto: update
         dialect: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
+
+
+  security:
+    user:
+      name: johnie
+      password: 123456

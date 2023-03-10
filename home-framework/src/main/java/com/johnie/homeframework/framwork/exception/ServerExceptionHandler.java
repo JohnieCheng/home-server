@@ -1,6 +1,6 @@
 package com.johnie.homeframework.framwork.exception;
 
-import com.johnie.homeserver.framwork.enums.Result;
+import com.johnie.homeframework.framwork.enums.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindException;

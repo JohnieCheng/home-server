@@ -1,9 +1,9 @@
 package com.johnie.homeframework.framwork.security.exception;
 
-import com.johnie.homeserver.framwork.enums.Result;
+import com.johnie.homeframework.framwork.enums.Result;
 import com.johnie.homeframework.framwork.exception.ErrorCode;
-import com.johnie.homeserver.framwork.utils.HttpContextUtils;
-import com.johnie.homeserver.framwork.utils.JsonUtils;
+import com.johnie.homeframework.framwork.utils.HttpContextUtils;
+import com.johnie.homeframework.framwork.utils.JsonUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
